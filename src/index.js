@@ -9,12 +9,12 @@ store.subscribe(() => {
 	setAnswers(answers)
 })
 
-import { Router, browserHistory } from 'react-router';
+import { Router, hashHistory } from 'react-router';
 import Routes from './routes'
 
 ReactDOM.render(
 	<Provider store={store}>
-		<Router history={browserHistory} routes={Routes}>
+		<Router history={hashHistory} routes={Routes}>
 		</Router>
 	</Provider>,
 	document.getElementById('root')
