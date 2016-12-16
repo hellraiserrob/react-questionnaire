@@ -124,5 +124,23 @@
                 "value": 20
             }]
         }]
+    },{
+        "id": 4,
+        "name": "Training",
+        "description": "Sore additional blurb about the training category",
+        "questions": [{
+            "id": 1,
+            "title": "Are you trained",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+            "answers": [{
+                "id": 1,
+                "title": "No",
+                "value": 0
+            },{
+                "id": 2,
+                "title": "Yes, I am the best",
+                "value": 200
+            }]
+        }]
     }]
 }
