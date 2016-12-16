@@ -1,0 +1,128 @@
+{
+    "categories": [{
+        "id": 1,
+        "name": "Compliance",
+        "description": "Some blurb about the compliance category",
+        "questions": [{
+            "id": 1,
+            "title": "How good is your Compliance?",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+            "answers": [{
+                "id": 1,
+                "title": "Low",
+                "value": 1
+            },{
+                "id": 2,
+                "title": "Medium",
+                "value": 2
+            },{
+                "id": 3,
+                "title": "Really quite special",
+                "value": 3
+            }]
+        }, {
+            "id": 2,
+            "title": "Question 2",
+            "description": "Consectetur adipisicing elit",
+            "answers": [{
+                "id": 1,
+                "title": "Low",
+                "value": 100
+            },{
+                "id": 2,
+                "title": "High",
+                "value": 20
+            }]
+        }]
+    },{
+        "id": 2,
+        "name": "Security",
+        "description": "Sore additional blurb about this category",
+        "questions": [{
+            "id": 1,
+            "title": "Question 1",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+            "answers": [{
+                "id": 1,
+                "title": "Low",
+                "value": 1
+            },{
+                "id": 2,
+                "title": "Medium",
+                "value": 2
+            },{
+                "id": 3,
+                "title": "High",
+                "value": 3
+            },{
+                "id": 4,
+                "title": "Total",
+                "value": 20
+            }]
+        },{
+            "id": 2,
+            "title": "What is my Name?",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+            "answers": [{
+                "id": 1,
+                "title": "Rob",
+                "value": 100
+            },{
+                "id": 2,
+                "title": "James",
+                "value": 0
+            },{
+                "id": 3,
+                "title": "Wilbur",
+                "value": 0
+            },{
+                "id": 4,
+                "title": "Frederick",
+                "value": 0
+            }]
+        },{
+            "id": 3,
+            "title": "What is my Age?",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+            "answers": [{
+                "id": 1,
+                "title": "25",
+                "value": 0
+            },{
+                "id": 2,
+                "title": "32",
+                "value": 100
+            },{
+                "id": 3,
+                "title": "35",
+                "value": 0
+            }]
+        }]
+    },{
+        "id": 3,
+        "name": "People",
+        "description": "Sore additional blurb about this category",
+        "questions": [{
+            "id": 1,
+            "title": "Question 1",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+            "answers": [{
+                "id": 1,
+                "title": "Low",
+                "value": 1
+            },{
+                "id": 2,
+                "title": "Medium",
+                "value": 2
+            },{
+                "id": 3,
+                "title": "High",
+                "value": 3
+            },{
+                "id": 4,
+                "title": "Total",
+                "value": 20
+            }]
+        }]
+    }]
+}
