@@ -1,7 +1,0 @@
-.DS_Store
-bower_components
-dist
-build
-node_modules
-.tmp
-npm-debug.log
