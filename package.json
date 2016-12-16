@@ -28,5 +28,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://hellraiserrob.github.io/questionnaire"
+  "homepage": "https://hellraiserrob.github.io/react-questionnaire/"
 }
