@@ -46,7 +46,7 @@ export function receiveQuestionsError(response) {
 export function fetchQuestions() {
     return dispatch => {
         dispatch(requestQuestions())
-        return fetch(`/api/questions.json`)
+        return fetch(`api/questions.json`)
             .then(response => response.json())
             .then(response => dispatch(receiveQuestions(response)))
             .catch(response => dispatch(receiveQuestionsError(response)))
