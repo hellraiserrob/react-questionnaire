@@ -5,6 +5,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import { fetchQuestions } from '../actions/questionActions'
 import Tooltip from '../components/common/Tooltip'
+import Modal from '../components/common/Modal'
 
 class StartContainer extends Component {
 
@@ -21,7 +22,7 @@ class StartContainer extends Component {
         return (
             <div>
 
-            <ReactCSSTransitionGroup
+                <ReactCSSTransitionGroup
                     transitionName="fade"
                     transitionAppear={true}
                     transitionAppearTimeout={300}
@@ -42,6 +43,10 @@ class StartContainer extends Component {
                         <p className="question__copy">
                             {category.description}
                         </p>
+
+                        <div className="mb20">
+                            <Modal title={category.name} text={category.description}>Show Modal</Modal>
+                        </div>
 
                         <hr />
                     </div>

@@ -43,10 +43,8 @@ p {
     margin: 0 0 20px 0;
 }
 
-.text-muted {
-    
-    
-    
+.text-left {
+    text-align: left;   
 }
 
 
@@ -594,6 +592,46 @@ footer {
 
 .fade-leave.fade-leave-active {
   opacity: 0;
+}
+
+
+/* modal animation */
+
+.modal {
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom:0;
+    box-sizing: border-box;
+    padding: 30px;
+    background: #fff;
+    text-align:left;
+    /*transform: translate(-50%, -50%);*/
+    z-index: 20;
+    overflow: hidden;
+}
+
+.modal hr {
+    margin: 0 0 20px 0;
+}
+
+.modal-enter {
+  transition: all .3s ease-in;
+  opacity: 0.01;
+}
+
+.modal-enter.modal-enter-active {
+  opacity: 1;
+}
+
+.modal-leave {
+  transition: all .3s ease-in;
+  opacity: 1;
+}
+
+.modal-leave.modal-leave-active {
+  opacity: 0.01;
 }
 
 
