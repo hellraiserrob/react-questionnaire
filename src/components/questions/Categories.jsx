@@ -1,5 +1,6 @@
 import React from 'react'
 import Question from './Question'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 const Category = ({id, name, description, questions, handleSetAnswer, answered}) => (
     <div>
@@ -10,16 +11,26 @@ const Category = ({id, name, description, questions, handleSetAnswer, answered})
             <hr />
         </div>
 
-        {questions.map((question, index) => 
-            <Question
-                key={question.id}
-                handleSetAnswer={handleSetAnswer}
-                categoryId={id}
-                questions={questions}
-                answered={answered}
-                {...question}
-            />
-        )}
+        
+        <ReactCSSTransitionGroup
+            transitionName="fade"
+            transitionAppear={true}
+            transitionAppearTimeout={300}
+            transitionEnterTimeout={300}
+            transitionLeaveTimeout={300}>
+
+            {questions.map((question, index) => 
+                <Question
+                    key={question.id}
+                    handleSetAnswer={handleSetAnswer}
+                    categoryId={id}
+                    questions={questions}
+                    answered={answered}
+                    {...question}
+                />
+            )}
+
+        </ReactCSSTransitionGroup>
 
     
 

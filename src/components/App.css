@@ -299,23 +299,31 @@ hr{
 
 
 .dial {
-    width: 400px;
+    display: inline-block;
+    width: 180px;
     margin: 0 auto 10px auto;
+    padding: 0 10px;
+}
+
+.dial__title {
+    font-size: 30px;
+    font-weight: 500;
 }
 
 .dial text {
     text-anchor: middle;
-    font-weight: 500;
-    font-size: 13px;
-    fill: #000;
+    font-weight: 600;
+    font-size: 25px;
+    fill: #000;  
+}
 
-    
-    
+.dial text.summary {
+    opacity: 0.4
 }
 
 .dial text.percent {
     text-anchor: middle;
-    font-weight: 300;
+    font-weight: 500;
     font-size: 70px;
     
 }
@@ -323,6 +331,7 @@ hr{
 .dial path.total {
     fill:black;
     /*fill:#ac3b22;*/
+    fill: blueviolet;
 }
 
 .dial path.possible {
@@ -431,26 +440,159 @@ footer {
 
 
 
-/* animaitons */
+.mb20 {
+    margin-bottom: 20px;
+}
+
+
+.tooltip {
+    position: relative;
+    text-decoration: none;
+    display:inline-block;
+    font-weight: 700;
+    font-size: 0.8em;
+    cursor: pointer;
+    color: purple;
+    /*background: #fff;*/
+    /*margin: 0 5px;*/
+}
+
+.tooltip hr {
+    margin: 0 auto 15px auto;
+    display:none;
+}
+
+.tooltip__title {
+    font-weight: 600;
+    margin: 0 0 5px 0;
+}
+
+.tooltip__text {
+    display:block;
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 8px);
+    width: 200px;
+    padding: 12px 10px;
+    transform: translateX(-50%);
+    text-align: left;
+    
+    background: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+    
+    /*border-radius: 5px;*/
+    /*box-shadow: 0 0 20px rgba(0,0,0, 0.2)*/
+
+    
+} 
+
+.tooltip__text:after {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(255, 255, 255, 0);
+	border-top-color: #fff;
+	border-width: 6px;
+	margin-left: -6px;
+}
+
+
+
+
+
+
+/* page */
+
+.page-appear {
+  opacity: 0.01;
+}
+
+.page-appear.page-appear-active {
+  opacity: 1;
+  transition: all .3s ease-in;
+}
 
 .page-enter {
   opacity: 0.01;
   transition: all .3s ease-in;
-  /*transform: translateY(100px);*/
 }
 
 .page-enter.page-enter-active {
   opacity: 1;
-  /*transform: translateY(0);*/
 }
 
 .page-leave {
   opacity: 1;
-  transition: opacity .5s ease-in;
+  transition: all .5s ease-in;
   display:none;
 }
 
 .page-leave.page-leave-active {
+  opacity: 0;
+}
+
+
+/* tooltip */
+
+.tooltip-enter {
+  opacity: 0.01;
+  transition: all .2s ease-in;
+  
+  bottom: calc(100% + 20px);
+}
+
+.tooltip-enter.tooltip-enter-active {
+  opacity: 1;
+  margin-top: 0;
+  bottom: calc(100% + 8px);
+}
+
+.tooltip-leave {
+  opacity: 1;
+  transition: all .2s ease-in;
+  bottom: calc(100% + 8px);
+}
+
+.tooltip-leave.tooltip-leave-active {
+  opacity: 0;
+  bottom: calc(100% + 20px);
+  
+}
+
+
+/* fade animation */
+
+.fade-appear {
+  opacity: 0.01;
+}
+
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity .3s ease-in;
+}
+
+.fade-enter {
+  opacity: 0.01;
+  transition: all .3s ease-in;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+}
+
+.fade-leave {
+  opacity: 1;
+  transition: all .3s ease-in;
+}
+
+.fade-leave.fade-leave-active {
   opacity: 0;
 }
 
