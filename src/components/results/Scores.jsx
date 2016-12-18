@@ -63,8 +63,13 @@ class Scores extends Component {
 
         return (
             <div className="scores">
-                <Dial total={total} possible={possible} />
-                <p className="scores__summary">You have answered {this.getProgress(categoryId, answers, questions)} out of {questions.length} in this category with {total} out of {possible}</p>
+
+                <Dial title={'Answered'} total={this.getProgress(categoryId, answers, questions)} possible={questions.length} />
+
+                <Dial title={'Accuracy'} total={total} possible={possible} />
+                {/* 
+                    <p className="scores__summary">You have answered {this.getProgress(categoryId, answers, questions)} out of {questions.length} in this category with {total} out of {possible}</p>
+                */}
             </div>
         )
     }
