@@ -666,7 +666,7 @@ footer {
 
 @media (max-width: 800px) {
   .dial {
-    width: auto;
+    /*width: auto;*/
   }
 
 }
