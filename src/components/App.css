@@ -13,7 +13,7 @@ body {
     font-size: 20px;
     color: #000;
     background: coral;
-    /*background: lightseagreen*/
+    background: lightseagreen;
     text-align: center;
 }
 
@@ -43,8 +43,29 @@ p {
     margin: 0 0 20px 0;
 }
 
+textarea {
+    position: absolute;
+    top:0;
+    left:0;
+    opacity:0;
+}
+
 .text-left {
     text-align: left;   
+}
+
+
+
+.share {
+    /*padding: 20px;
+    border: 2px solid rgba(255,255,255, 0.5);*/
+    
+}
+
+.share__title {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
 }
 
 
@@ -194,13 +215,21 @@ p {
 }
 
 
+.copy {
+    
+    margin: 0 0 50px 0;
+    
+}
+
+
 hr{
     width: 75px;
     height: 0px;
     border: 0;
     border-bottom: 5px solid #000;
-    text-align: center;
+    text-align: left;
     margin: 0 auto
+    
 }
 
 
@@ -330,11 +359,12 @@ hr{
     fill:black;
     /*fill:#ac3b22;*/
     fill: blueviolet;
+    fill: white
 }
 
 .dial path.possible {
-    fill: #e35e41;
-    stroke: #e35e41;
+    fill: teal;
+    stroke: teal;
 }
 
 
@@ -386,8 +416,9 @@ footer {
     padding: 10px 20px;
     text-decoration: none;
     border: 2px solid rgba(255,255,255, 0.5);
-
+    background: transparent;
     transition: all ease 0.3s;
+    cursor: pointer;
 }
 
 .btn--naked {

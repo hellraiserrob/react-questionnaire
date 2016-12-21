@@ -1,14 +1,14 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk'
 import reducer from './reducers/index'
-import { loadAnswers } from './libs/localStorage'
+import { getAnswers } from './libs/localStorage'
 
 // import createLogger from 'redux-logger'
 //const loggerMiddleware = createLogger()
 
 const persistedAnswers = {
 	answerReducer: {
-		answers: loadAnswers()
+		answers: getAnswers()
 	}
 }
 

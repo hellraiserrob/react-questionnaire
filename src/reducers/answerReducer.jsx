@@ -1,4 +1,4 @@
-import { SET_ANSWER, RESET_ANSWERS } from '../constants/answerTypes.js'
+import { SET_ANSWER, SET_ANSWERS, RESET_ANSWERS } from '../constants/answerTypes.js'
 
 const initialState = {
     answers: []
@@ -35,6 +35,10 @@ function answerReducer(state = initialState, action){
                 answerId
             }]};
             
+        }
+
+        case SET_ANSWERS: {
+            return {...state, answers: action.payload.answers}
         }
 
         case RESET_ANSWERS: {

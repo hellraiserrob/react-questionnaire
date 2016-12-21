@@ -1,4 +1,4 @@
-export const loadAnswers = () => {
+export const getAnswers = () => {
     try {
         const answers = localStorage.getItem('answers')
         if(answers === null){

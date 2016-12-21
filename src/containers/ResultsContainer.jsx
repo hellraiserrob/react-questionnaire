@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { fetchQuestions } from '../actions/questionActions'
+
 import Categories from '../components/results/Categories'
+import Share from '../components/results/Share'
 
 import { Link } from 'react-router'
 
@@ -30,6 +32,8 @@ class ResultsContainer extends Component  {
                 {isFetching &&
                     <div className="loading">loading</div>
                 }
+
+                <Share answers={answers} />
 
                 <Categories
                     categories={categories}

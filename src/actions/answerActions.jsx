@@ -1,4 +1,4 @@
-import { SET_ANSWER, RESET_ANSWERS } from '../constants/answerTypes'
+import { SET_ANSWER, SET_ANSWERS, RESET_ANSWERS } from '../constants/answerTypes'
 
 export function setAnswer(categoryId, questionId, answerId){
     return {
@@ -7,6 +7,15 @@ export function setAnswer(categoryId, questionId, answerId){
             categoryId,
             questionId,
             answerId
+        }
+    }
+}
+
+export function setAnswers(answers){
+    return {
+        type: SET_ANSWERS,
+        payload: {
+            answers
         }
     }
 }
