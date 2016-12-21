@@ -17,7 +17,7 @@ class Share extends Component {
     }
 
     toUrl(answers) {
-        return document.location.origin + '/#/share/' + encodeURIComponent(JSON.stringify(answers))
+        return document.location.origin + document.location.pathname + '/#/share/' + encodeURIComponent(JSON.stringify(answers))
     }
 
     copy(e) {

@@ -10,6 +10,7 @@ class ShareContainer extends Component {
 
         super(props)
         this.set = this.set.bind(this)
+    
 
     }
 
