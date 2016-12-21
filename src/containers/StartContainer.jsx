@@ -4,8 +4,9 @@ import { Link } from 'react-router'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import { fetchQuestions } from '../actions/questionActions'
-import Tooltip from '../components/common/Tooltip'
-import Modal from '../components/common/Modal'
+// import Tooltip from '../components/common/Tooltip'
+
+// import Modal from '../components/common/Modal'
 
 class StartContainer extends Component {
 
@@ -37,16 +38,16 @@ class StartContainer extends Component {
                         </h5>
                     
                         <h4 className="question__title">
-                            {category.name} <Tooltip title={'Note'} text={category.description}>?</Tooltip>
+                            {category.name} {/*<Tooltip title={'Note'} text={category.description}>?</Tooltip>*/}
                         </h4>
                     
                         <p className="question__copy">
                             {category.description}
                         </p>
 
-                        <div className="mb20">
+                        {/*<div className="mb20">
                             <Modal title={category.name} text={category.description}>Show Modal</Modal>
-                        </div>
+                        </div>*/}
 
                         <hr />
                     </div>
