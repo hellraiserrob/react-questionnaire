@@ -7,6 +7,7 @@ import Categories from '../components/results/Categories'
 import Share from '../components/results/Share'
 
 import { Link } from 'react-router'
+import Flasher from '../components/common/Flasher'
 
 class ResultsContainer extends Component  {
 
@@ -27,22 +28,31 @@ class ResultsContainer extends Component  {
         const { categories, isFetching, answers } = this.props
 
         return (
-            <div>
+            <div className="ptlg">
 
                 {isFetching &&
                     <div className="loading">loading</div>
                 }
 
-                <Share answers={answers} />
+                <div className="mb50">
+                    <h2 className="mb30">
+                        Like your results, <Link to="/questions">No<Flasher delay={0} duration={500}>.</Flasher></Link>
+                    </h2>
+                    <hr/>
+                </div>
+
+                {/*<Share answers={answers} />*/}
 
                 <Categories
                     categories={categories}
                     answers={answers}
                  />
-                 
+
+                {/* 
                 <footer>
                     <Link className="btn btn--block btn--submit" to="/questions">Back</Link>
                 </footer>
+                */}
             </div>
         )
     }
