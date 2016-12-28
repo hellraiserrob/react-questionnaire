@@ -42,11 +42,12 @@ class ResultsContainer extends Component  {
                 </div>
 
                 {/*<Share answers={answers} />*/}
-
-                <Categories
-                    categories={categories}
-                    answers={answers}
-                 />
+                <div className="clearfix mb30">
+                    <Categories
+                        categories={categories}
+                        answers={answers}
+                    />
+                 </div>
 
                 {/* 
                 <footer>

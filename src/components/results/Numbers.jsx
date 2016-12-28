@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Flasher from '../common/Flasher'
+
 class Numbers extends Component {
 
     getProgress(categoryId, answers, questions) {
@@ -46,8 +48,20 @@ class Numbers extends Component {
 
         return {
             total: total,
-            possible: possible
+            possible: possible,
+            percent: this.getPercent(total, possible)
         }
+    }
+
+    getPercent(total, possible){
+        return Math.round(total / possible * 100)
+    }
+
+    getStyle(percent){
+
+        const color = (percent >= 50) ? 'text-green': 'text-red'
+
+        return color
     }
 
     render() {
@@ -56,19 +70,27 @@ class Numbers extends Component {
 
         const total = this.getScore(categoryId, answers, questions).total
         const possible = this.getScore(categoryId, answers, questions).possible
+        const percent = this.getScore(categoryId, answers, questions).percent
 
-        
+        const style = this.getStyle(percent)
 
         return (
             <div className="scores">
 
-                <h2>
-                    {this.getProgress(categoryId, answers, questions)}{questions.length}%
-                </h2>
-
-                <h2>
-                    {total}{possible}%
-                </h2>
+                {percent === 0 &&
+                    <Flasher duration={1000} delay={0}>
+                        <h3 className={style}>
+                            {percent}%
+                        </h3>
+                    </Flasher>
+                }
+                
+                {percent > 0 &&
+                    <h3 className={style}>
+                        {percent}%
+                    </h3>
+                }
+                
                 
             </div>
         )

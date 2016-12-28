@@ -12,11 +12,11 @@ class Categories extends Component {
             <div>
                 {categories.map((category)=>{
 
-                    return <div key={category.id}>
+                    return <div className="box" key={category.id}>
 
                         <div className="">
                         
-                            <p className="mb10">{category.name}</p>
+                            <h4 className="mb0">{category.name}</h4>
                             {/*<p className="">{category.description}</p>
                             <hr />*/}
 
@@ -35,6 +35,8 @@ class Categories extends Component {
                                 questions={category.questions}
                                 answers={answers}
                             />*/}
+
+                            
 
                             <Numbers 
                                 key={category.id}
