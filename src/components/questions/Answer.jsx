@@ -61,7 +61,7 @@ class Answer extends Component {
                     {title}
                 </label>
 
-                <div className="answer__value">{value}p</div>
+                <div className="answer__value">{value}</div>
 
             </div>
 

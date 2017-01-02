@@ -5,11 +5,13 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 const Category = ({id, name, description, questions, handleSetAnswer, answered}) => (
     <div>
 
-        <div className="category">
+        {/*<div className="category">
             <h3 className="category__title">{name}</h3>
             <p className="category__copy">{description}</p>
             <hr />
-        </div>
+        </div>*/}
+
+        <h4 className="mb50 highlight"><span>{name}</span></h4>
 
         
         <ReactCSSTransitionGroup

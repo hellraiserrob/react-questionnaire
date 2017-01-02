@@ -52,6 +52,7 @@ import { Link } from 'react-router'
 
 import Category from '../components/questions/Categories'
 import Progress from '../components/questions/Progress'
+import Flasher from '../components/common/Flasher'
 
 class QuestionContainer extends Component  {
 
@@ -86,21 +87,37 @@ class QuestionContainer extends Component  {
         const mappedCategories = this.mapCategories(categories, handleSetAnswer, answers)
 
         return (
-            <div>
+            <div className="ptlg">
                 {isFetching &&
                     <div className="loading">Loading...</div>
                 }
 
+                <h2 className="mb100">
+                    Now answer the damn questions<Flasher delay={0} duration={500}>.</Flasher>
+                </h2>
+
                 {mappedCategories}
                 
-                <footer>
-                    <Progress answers={answers} categories={categories} />
-                    <Link className="btn btn--block btn--submit" to="/results">Next...</Link>
-                </footer>
+                <div className="sticky-bottom clearfix">
+                    
+                    {/*<Progress answers={answers} categories={categories} />*/}
+
+                    <div className="row text-right">
+                        <div className="col-6">
+                            {/*answers.length > 0 &&
+                                <a className="btn btn--block" href="#" onClick={(e) => handleResetAnswers(e)}>Reset</a>
+                            */}
+                        </div>
+                        <div className="col-12">
+                            <Link className="btn" to="/">back</Link>
+                            <Link className="btn btn--submit" to="/results">next</Link>
+                        </div>
+                    </div>
+
+
+                </div>
                 
-                {answers.length > 0 &&
-                    <a className="btn btn--naked" href="#" onClick={(e) => handleResetAnswers(e)}>Reset</a>
-                }
+                
             </div>
         )
     }
