@@ -47,7 +47,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { fetchQuestions } from '../actions/questionActions'
-import { setAnswer, resetAnswers } from '../actions/answerActions'
+import { setAnswer } from '../actions/answerActions'
 import { Link } from 'react-router'
 
 import Category from '../components/questions/Categories'
@@ -83,7 +83,7 @@ class QuestionContainer extends Component  {
 
     render(){
 
-        const { categories, handleSetAnswer, answers, isFetching, handleResetAnswers } = this.props
+        const { categories, handleSetAnswer, answers, isFetching } = this.props
         const mappedCategories = this.mapCategories(categories, handleSetAnswer, answers)
 
         return (
@@ -92,7 +92,7 @@ class QuestionContainer extends Component  {
                     <div className="loading">Loading...</div>
                 }
 
-                <h2 className="mb100">
+                <h2 className="mb50">
                     Now answer the damn questions<Flasher delay={0} duration={500}>.</Flasher>
                 </h2>
 
@@ -100,7 +100,7 @@ class QuestionContainer extends Component  {
                 
                 <div className="sticky-bottom clearfix">
                     
-                    {/*<Progress answers={answers} categories={categories} />*/}
+                    <Progress answers={answers} categories={categories} />
 
                     <div className="row text-right">
                         <div className="col-6">
@@ -141,10 +141,6 @@ function mapDispatchToProps(dispatch) {
 	return {
 		handleSetAnswer(categoryId, questionId, answerId) {
 			dispatch(setAnswer(categoryId, questionId, answerId))
-		},
-		handleResetAnswers(e) {
-			e.preventDefault()
-			dispatch(resetAnswers())
 		},
 		handleFetchQuestions() {
 			dispatch(fetchQuestions())

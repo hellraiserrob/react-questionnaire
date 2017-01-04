@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
+
 
 
 class Flasher extends Component {
@@ -14,7 +14,7 @@ class Flasher extends Component {
             }
         }
 
-        let isOn = true
+        
 
         this.on = this.on.bind(this)
         this.off = this.off.bind(this)

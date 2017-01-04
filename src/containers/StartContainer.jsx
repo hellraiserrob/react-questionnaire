@@ -20,7 +20,7 @@ class StartContainer extends Component {
 
     render() {
 
-        const { categories } = this.props
+        // const { categories } = this.props
 
         return (
             <div className="ptlg">
@@ -58,12 +58,12 @@ class StartContainer extends Component {
                 <h2 className="mb30">
                     Well hello, let's <Link to="/questions">get started<Flasher delay={0} duration={500}>.</Flasher></Link>   
                 </h2>
-                <hr/>
-                {/*
-                <p className="mb30">Take the questionnaire, prove yourself</p>
+                <p className="mb30 hide">Take the questionnaire, prove yourself</p>
                 <p>
-                    <Link className="btn " to="/questions">Start</Link>
+                    <Link className="btn btn--submit" to="/questions">start</Link>
                 </p>
+                
+                {/*
                 
 
                 <footer>

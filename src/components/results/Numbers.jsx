@@ -68,8 +68,8 @@ class Numbers extends Component {
 
         const { categoryId, questions, answers } = this.props
 
-        const total = this.getScore(categoryId, answers, questions).total
-        const possible = this.getScore(categoryId, answers, questions).possible
+        // const total = this.getScore(categoryId, answers, questions).total
+        // const possible = this.getScore(categoryId, answers, questions).possible
         const percent = this.getScore(categoryId, answers, questions).percent
 
         const style = this.getStyle(percent)

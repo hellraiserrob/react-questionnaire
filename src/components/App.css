@@ -62,7 +62,7 @@ h5 {
 
 
 .highlight {
-    text-align: center;
+    /*text-align: center;*/
 }
 .highlight span{
     /*background: mediumpurple;*/
@@ -95,6 +95,8 @@ textarea {
     top:0;
     left:0;
     opacity:0;
+    width: 1px;
+    height: 1px;
 }
 
 .text-left {
@@ -117,17 +119,39 @@ textarea {
     color: indianred;
 }
 
-.share {
-    /*padding: 20px;
-    border: 2px solid rgba(255,255,255, 0.5);*/
-    
+.hide {
+    display: none;
 }
 
-.share__title {
-    font-size: 40px;
-    font-weight: 700;
-    margin: 0 0 10px 0;
+.pull-right {
+    float:right;
 }
+
+.pull-left {
+    float:left;
+}
+
+
+
+.relative {
+    position: relative;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.tooltip {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 2px;
+}
+
 
 
 .logo {
@@ -261,9 +285,9 @@ textarea {
     text-decoration: none;
     transition: all ease 0.3s;
     cursor: pointer;
-    background: #fff;
+    background: #eee;
     /*border-bottom: 1px solid #ddd;*/
-    color: mediumpurple;
+    color: #999;
     border-radius: 25px;
 
 }
@@ -296,15 +320,14 @@ textarea {
     color: mediumpurple;
     color: orangered;
     background: #eee;
-    background: #333;
+    background: #fff;
 
-    color: #fff;
+    color: #000;
 }
 
 .answer__item input:checked + label:after{
     /*border-color: #fff*/
     border-color: mediumpurple;
-    border-color: #fff;
 
 }
 
@@ -380,21 +403,21 @@ hr{
 
 
 .progress {
-    
     position: absolute;
     top: -5px;
     left: 0%;
     right: 0;
     /*background: rgba(0, 0, 0, 0.1);*/
-    height: 5px;
+    height: 2px;
     margin: 0 auto;
     /*box-shadow: inset 0 1px 1px rgba(0,0,0,0.1)*/
+    opacity: 0.5;
 }
 
 .progress__bar {
     width: 0;
     height: 5px;
-    background: black;
+    background: #000;
     transition: all ease 0.3s;
     content: "";
     /*border-radius: 2px;*/
@@ -528,7 +551,7 @@ footer {
     right:0;
 
     /*max-width: 800px;*/
-    overflow: hidden;
+    
 
     /*left: 50%;
 
@@ -555,7 +578,7 @@ footer {
     font-size: 20px;
     font-weight: 300;
     color: #999;
-    padding: 10px 30px;
+    padding: 10px 25px;
     text-decoration: none;
     /*border: 3px solid rgba(0, 0, 0, 0.2);*/
     /*border-color: orangered;
@@ -593,8 +616,15 @@ footer {
 .btn--submit:hover {
     /*padding-top: 20px;
     padding-bottom: 20px;*/
-    background: #000;
+    background: rebeccapurple;
     color: #fff;
+}
+
+.btn--clear {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
 }
 
 
@@ -630,6 +660,14 @@ footer {
 
 
 
+.m5 {
+    margin: 5px;
+}
+
+.m10 {
+    margin: 10px;
+}
+
 .mb0 {
     margin-bottom: 10px;
 }
@@ -653,66 +691,6 @@ footer {
 .mb100 {
     margin-bottom: 100px;
 }
-
-
-.tooltip {
-    position: relative;
-    text-decoration: none;
-    display:inline-block;
-    font-weight: 700;
-    font-size: 0.8em;
-    cursor: pointer;
-    color: purple;
-    /*background: #fff;*/
-    /*margin: 0 5px;*/
-}
-
-.tooltip hr {
-    margin: 0 auto 15px auto;
-    display:none;
-}
-
-.tooltip__title {
-    font-weight: 600;
-    margin: 0 0 5px 0;
-}
-
-.tooltip__text {
-    display:block;
-    position: absolute;
-    left: 50%;
-    bottom: calc(100% + 8px);
-    width: 200px;
-    padding: 12px 10px;
-    transform: translateX(-50%);
-    text-align: left;
-    
-    background: #fff;
-    font-size: 16px;
-    font-weight: 400;
-    color: #333;
-    
-    /*border-radius: 5px;*/
-    /*box-shadow: 0 0 20px rgba(0,0,0, 0.2)*/
-
-    
-} 
-
-.tooltip__text:after {
-	top: 100%;
-	left: 50%;
-	border: solid transparent;
-	content: " ";
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
-	border-color: rgba(255, 255, 255, 0);
-	border-top-color: #fff;
-	border-width: 6px;
-	margin-left: -6px;
-}
-
 
 
 
@@ -880,12 +858,28 @@ footer {
 
 @media (max-width: 800px) {
 
+
+    .ptlg {
+        padding-top: 100px;
+    }
+
     h2 {
         font-size: 60px;
     }
 
   .dial {
     /*width: auto;*/
+  }
+
+  .box {
+      float: none;
+      height: auto;
+      width: auto;
+  }
+
+  .sticky-bottom {
+      padding-left: 10px;
+      padding-right: 10px;
   }
 
 }

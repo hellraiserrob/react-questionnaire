@@ -41,7 +41,7 @@ class ResultsContainer extends Component  {
                     <hr/>
                 </div>
 
-                {/*<Share answers={answers} />*/}
+            
                 <div className="clearfix mb30">
                     <Categories
                         categories={categories}
@@ -49,11 +49,24 @@ class ResultsContainer extends Component  {
                     />
                  </div>
 
-                {/* 
-                <footer>
-                    <Link className="btn btn--block btn--submit" to="/questions">Back</Link>
-                </footer>
-                */}
+                <div className="sticky-bottom clearfix">
+
+                    <div className="row text-right">
+                        <div className="col-6">
+                            {/*answers.length > 0 &&
+                                <a className="btn btn--block" href="#" onClick={(e) => handleResetAnswers(e)}>Reset</a>
+                            */}
+                        </div>
+                        <div className="col-12">
+                            <Link className="btn" to="/questions">back</Link>
+                            {/*<Link className="btn btn--submit" to="/results">share</Link>*/}
+                            <Share answers={answers} />
+                        </div>
+                    </div>
+
+
+                </div>
+                
             </div>
         )
     }
