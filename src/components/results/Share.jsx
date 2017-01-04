@@ -39,6 +39,8 @@ class Share extends Component {
             this.setState({
                 isCopied: true
             })
+
+            this.hideTooltip()
             
 
         } catch (err) {
@@ -50,6 +52,14 @@ class Share extends Component {
 
     }
 
+    hideTooltip(){
+        setTimeout(()=>{
+            this.setState({
+                isCopied: false
+            })
+        },1000)
+    }
+
     render() {
 
         const { answers } = this.props
@@ -57,29 +67,14 @@ class Share extends Component {
 
 
         return (
-            <div>
-                {answers.length > 0 &&
-
-
-                    
-
-                    <div  className="category">
-                        <h3 className="category__title">Copy</h3>
-                        <p>Copy and send your results to someone else</p>
-                        <p>
-                            <a href="#" className="btn" onClick={this.copy}>Copy</a>
-                        </p>
-
-                        {this.state.isCopied &&
-                            <div>Looks like this was copied</div>
-                        }
-
-                        
-                        <textarea ref="urlInput" defaultValue={url}></textarea>
-
-                        
-                    </div>
-                }
+            <div className="relative inline-block">
+                
+                <a href="#" className="btn btn--submit" onClick={this.copy}>share</a>
+                {this.state.isCopied &&
+                    <div className="tooltip">Copied.</div>
+                }        
+                <textarea ref="urlInput" defaultValue={url}></textarea>
+                
             </div>
         )
     }

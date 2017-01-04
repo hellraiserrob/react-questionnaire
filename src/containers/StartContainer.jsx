@@ -8,6 +8,8 @@ import { fetchQuestions } from '../actions/questionActions'
 
 // import Modal from '../components/common/Modal'
 
+import Flasher from '../components/common/Flasher'
+
 class StartContainer extends Component {
 
     componentDidMount() {
@@ -18,10 +20,10 @@ class StartContainer extends Component {
 
     render() {
 
-        const { categories } = this.props
+        // const { categories } = this.props
 
         return (
-            <div>
+            <div className="ptlg">
 
                 <ReactCSSTransitionGroup
                     transitionName="fade"
@@ -30,7 +32,7 @@ class StartContainer extends Component {
                     transitionEnterTimeout={300}
                     transitionLeaveTimeout={300}>
 
-                {categories.map((category) => {
+                {/*categories.map((category) => {
                     return <div key={category.id} className="question">
 
                         <h5 className="question__number">
@@ -38,28 +40,35 @@ class StartContainer extends Component {
                         </h5>
                     
                         <h4 className="question__title">
-                            {category.name} {/*<Tooltip title={'Note'} text={category.description}>?</Tooltip>*/}
+                            {category.name} 
                         </h4>
                     
                         <p className="question__copy">
                             {category.description}
                         </p>
 
-                        {/*<div className="mb20">
-                            <Modal title={category.name} text={category.description}>Show Modal</Modal>
-                        </div>*/}
+                        
 
                         <hr />
                     </div>
-                })}
+                }) */}
 
                 </ReactCSSTransitionGroup>
 
-
+                <h2 className="mb30">
+                    Well hello, let's <Link to="/questions">get started<Flasher delay={0} duration={500}>.</Flasher></Link>   
+                </h2>
+                <p className="mb30 hide">Take the questionnaire, prove yourself</p>
+                <p>
+                    <Link className="btn btn--submit" to="/questions">start</Link>
+                </p>
+                
+                {/*
+                
 
                 <footer>
                     <Link className="btn btn--block btn--submit" to="/questions">Start</Link>
-                </footer>
+                </footer>*/ }
             </div>
         )
     }

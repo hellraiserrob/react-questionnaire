@@ -166,16 +166,12 @@ class Question extends Component {
 
         return (
             <div>
-
-                <div className="question">
-                    <h5 className="question__number">{id}</h5>
-                    <h4 className="question__title">{title}</h4>
-                    <p className="question__copy">
-                        {description}
-                    </p>
-                    <hr />
-                </div>
-
+                    
+                <h5 className="mb10 text-normal">{id} / {title}</h5>
+                <p className="">
+                    {description}
+                </p>
+                    
                 <div className="answers">
                     {answers.map((answer) =>
                         <Answer

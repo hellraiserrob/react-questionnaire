@@ -47,11 +47,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { fetchQuestions } from '../actions/questionActions'
-import { setAnswer, resetAnswers } from '../actions/answerActions'
+import { setAnswer } from '../actions/answerActions'
 import { Link } from 'react-router'
 
 import Category from '../components/questions/Categories'
 import Progress from '../components/questions/Progress'
+import Flasher from '../components/common/Flasher'
 
 class QuestionContainer extends Component  {
 
@@ -82,25 +83,41 @@ class QuestionContainer extends Component  {
 
     render(){
 
-        const { categories, handleSetAnswer, answers, isFetching, handleResetAnswers } = this.props
+        const { categories, handleSetAnswer, answers, isFetching } = this.props
         const mappedCategories = this.mapCategories(categories, handleSetAnswer, answers)
 
         return (
-            <div>
+            <div className="ptlg">
                 {isFetching &&
                     <div className="loading">Loading...</div>
                 }
 
+                <h2 className="mb50">
+                    Now answer the damn questions<Flasher delay={0} duration={500}>.</Flasher>
+                </h2>
+
                 {mappedCategories}
                 
-                <footer>
+                <div className="sticky-bottom clearfix">
+                    
                     <Progress answers={answers} categories={categories} />
-                    <Link className="btn btn--block btn--submit" to="/results">Next...</Link>
-                </footer>
+
+                    <div className="row text-right">
+                        <div className="col-6">
+                            {/*answers.length > 0 &&
+                                <a className="btn btn--block" href="#" onClick={(e) => handleResetAnswers(e)}>Reset</a>
+                            */}
+                        </div>
+                        <div className="col-12">
+                            <Link className="btn" to="/">back</Link>
+                            <Link className="btn btn--submit" to="/results">next</Link>
+                        </div>
+                    </div>
+
+
+                </div>
                 
-                {answers.length > 0 &&
-                    <a className="btn btn--naked" href="#" onClick={(e) => handleResetAnswers(e)}>Reset</a>
-                }
+                
             </div>
         )
     }
@@ -124,10 +141,6 @@ function mapDispatchToProps(dispatch) {
 	return {
 		handleSetAnswer(categoryId, questionId, answerId) {
 			dispatch(setAnswer(categoryId, questionId, answerId))
-		},
-		handleResetAnswers(e) {
-			e.preventDefault()
-			dispatch(resetAnswers())
 		},
 		handleFetchQuestions() {
 			dispatch(fetchQuestions())
