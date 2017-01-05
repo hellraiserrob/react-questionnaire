@@ -404,24 +404,39 @@ hr{
 
 .progress {
     position: absolute;
-    top: -5px;
-    left: 0%;
+    top: -2px;
+    left: 0;
     right: 0;
     /*background: rgba(0, 0, 0, 0.1);*/
     height: 2px;
     margin: 0 auto;
     /*box-shadow: inset 0 1px 1px rgba(0,0,0,0.1)*/
-    opacity: 0.5;
+    opacity: 1;
 }
 
 .progress__bar {
     width: 0;
-    height: 5px;
+    height: 2px;
     background: #000;
+    background: rebeccapurple;
+    position: relative;
     transition: all ease 0.3s;
     content: "";
     /*border-radius: 2px;*/
 }
+
+.progress__bar:after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    right: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid rebeccapurple;
+}
+
 
 .progress__label {
     position: absolute;
@@ -588,6 +603,7 @@ footer {
     cursor: pointer;
 
     border-radius: 30px;
+    border:0;
 /*
     border-bottom: 3px solid #ccc;
     padding: 10px 0;*/
@@ -625,6 +641,8 @@ footer {
     top: 50%;
     right: 0;
     transform: translateY(-50%);
+    font-size: 15px;
+    padding: 8px 15px;
 }
 
 
