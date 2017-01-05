@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { hashHistory } from 'react-router';
 
+import Flasher from '../components/common/Flasher'
+
 import { setAnswers } from '../actions/answerActions'
 
 class ShareContainer extends Component {
@@ -39,14 +41,14 @@ class ShareContainer extends Component {
         
 
         return (
-            <div className="share">
+            <div className="ptlg">
 
-                <h1 className="share__title">Shared Answers</h1>
-                
-                <p>Someone shared their answers with you, click below to overwrite your own.</p>
+                <h2 className="mb30">
+                    Hey, someone sent you their answers<Flasher delay={0} duration={500}>.</Flasher>
+                </h2>
 
                 <p>
-                    <button className="btn" onClick={this.set}>OK</button>
+                    <button className="btn btn--submit" onClick={this.set}>OK</button>
                 </p>
                 
                 {/*<p>Currently, you have {answers.length} answers in state: </p>

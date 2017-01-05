@@ -11,10 +11,10 @@ class Header extends Component {
         return (
             <header>
 
-                <div className="container">
+                <div className="container relative">
                     <Link className="logo" to="/start">Q</Link>
                     {this.props.answers.length > 0 &&
-                        <a href="#" onClick={this.props.handleResetAnswers} className="btn btn--clear ">clear</a>
+                        <a href="#" onClick={this.props.handleResetAnswers} className="btn btn--submit btn--clear ">clear</a>
                     }
                 </div>
 

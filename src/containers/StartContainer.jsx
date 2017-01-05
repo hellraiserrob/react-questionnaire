@@ -53,7 +53,6 @@ class StartContainer extends Component {
                     </div>
                 }) */}
 
-                </ReactCSSTransitionGroup>
 
                 <h2 className="mb30">
                     Well hello, let's <Link to="/questions">get started<Flasher delay={0} duration={500}>.</Flasher></Link>   
@@ -62,6 +61,8 @@ class StartContainer extends Component {
                 <p>
                     <Link className="btn btn--submit" to="/questions">start</Link>
                 </p>
+                
+                </ReactCSSTransitionGroup>
                 
                 {/*
                 
