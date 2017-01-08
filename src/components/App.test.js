@@ -8,7 +8,7 @@ class TestComponent extends Component {
   render() { return (<div className="test" />) }
 }
 
-it('renders without crashing', () => {
+it('renders without crashing and testing travis', () => {
   const div = document.createElement('div');
   ReactDOM.render(
     <Provider store={store}>
