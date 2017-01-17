@@ -81,9 +81,10 @@ app.post('/save', (req, res) => {
 
     }
 
-    db.collection('result').save(body, (err, result) => {
+    db.collection('result').insert(body, (err, result) => {
         if (err) return console.log(err)
         console.log('saved to database')
+        console.log(result)
         res.send(result)
 
     })
