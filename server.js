@@ -40,7 +40,7 @@ app.get('/quiz/:id', function (req, res) {
 
     let id = ObjectID(req.params.id)
 
-    db.collection('quiz').findOne({_id: id}, (err, quiz) => {
+    db.collection('quiz').findOne({ _id: id }, (err, quiz) => {
 
         if (err) {
             return console.log(err)
@@ -71,11 +71,27 @@ app.get('/questions', function (req, res) {
     })
 })
 
-app.get('/test', function (req, res) {
+app.post('/save', (req, res) => {
 
-    res.send({
-        'status': 'ok'
+
+    let body = {
+        _quiz_id: '587de79d734d1d5b7d4641cb',
+        name: "Jane Smith",
+        answers: []
+
+    }
+
+    db.collection('result').save(body, (err, result) => {
+        if (err) return console.log(err)
+        console.log('saved to database')
+        res.send(result)
+
     })
 
-})
+    // console.log('save')
 
+    // res.send({
+    //     status: 'ok'
+    // })
+
+})
