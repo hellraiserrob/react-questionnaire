@@ -14,23 +14,33 @@ class Flasher extends Component {
             }
         }
 
-        
 
         this.on = this.on.bind(this)
         this.off = this.off.bind(this)
         this.tick = this.tick.bind(this)
 
-
-
-        window.setTimeout(()=>{
+       setTimeout(()=>{
             this.tick()
-        }, this.props.delay)
+       }, this.props.delay)
 
+    }
+
+    componentDidMount(){
+
+        
+
+    }
+
+    componentWillUnmount(){
+
+        
+        clearInterval(this.timer)
 
     }
 
     tick(){
-        window.setTimeout(()=>{
+        
+        this.timer = setTimeout(()=>{
             if(this.isOn){
                 this.off()
             }

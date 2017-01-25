@@ -31,27 +31,27 @@ mongoose.connect(`mongodb://${config.username}:${config.pwd}@ds139278.mlab.com:3
 
 // routes
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
     QuizCtrl.getAll(req, res)
 })
 
 // quizes
 
-app.get('/quiz/:id', (req, res) => {
+app.get('/api/quiz/:id', (req, res) => {
     QuizCtrl.getById(req, res)
 })
 
-app.post('/quiz/create', (req, res) => {
+app.post('/api/quiz/create', (req, res) => {
     QuizCtrl.create(req, res)
 })
 
 // answers routes
 
-app.get('/answers/:id', (req, res) => {
+app.get('/api/answers/:id', (req, res) => {
     AnswersCtrl.getById(req, res)
 })
 
-app.post('/answers/create', (req, res) => {
+app.post('/api/answers/create', (req, res) => {
     AnswersCtrl.create(req, res)
 })
 

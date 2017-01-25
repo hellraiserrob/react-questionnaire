@@ -35,5 +35,6 @@
     "eject": "react-scripts eject",
     "server": "nodemon server/app.js"
   },
-  "homepage": "https://hellraiserrob.github.io/react-questionnaire/"
+  "homepage": "https://hellraiserrob.github.io/react-questionnaire/",
+  "proxy": "http://localhost:3001"
 }
