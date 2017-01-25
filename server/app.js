@@ -2,16 +2,19 @@
 
 const express = require('express')
 const app = express()
-
-//const MongoClient = require('mongodb').MongoClient
-//const ObjectID = new require('mongodb').ObjectID
-const config = require('./config.js')
-//let db
-
 const mongoose = require('mongoose')
-const QuizCtrl = require('./controller/questionnaire.server.controller')
 
+// connection details
+const config = require('./config.js')
+
+//controllers
+const QuizCtrl = require('./controller/quizes.server.controller')
+const AnswersCtrl = require('./controller/answers.server.controller')
+
+// set to use es6 promises
 mongoose.Promise = global.Promise
+
+// connection to mongo lab 
 mongoose.connect(`mongodb://${config.username}:${config.pwd}@ds139278.mlab.com:39278/questionnaire`, (err) => {
 
     if (err) {
@@ -19,24 +22,39 @@ mongoose.connect(`mongodb://${config.username}:${config.pwd}@ds139278.mlab.com:3
         return console.log(err)
     }
 
-    app.listen(3001, function () {
+    app.listen(3001, () => {
         console.log('listening on 3001')
     })
 
 })
 
+
+// routes
+
 app.get('/', (req, res) => {
     QuizCtrl.getAll(req, res)
 })
+
+// quizes
 
 app.get('/quiz/:id', (req, res) => {
     QuizCtrl.getById(req, res)
 })
 
-
-app.post('/save', (req, res) => {
+app.post('/quiz/create', (req, res) => {
     QuizCtrl.create(req, res)
 })
+
+// answers routes
+
+app.get('/answers/:id', (req, res) => {
+    AnswersCtrl.getById(req, res)
+})
+
+app.post('/answers/create', (req, res) => {
+    AnswersCtrl.create(req, res)
+})
+
 
 
 

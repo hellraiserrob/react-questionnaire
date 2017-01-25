@@ -1,4 +1,4 @@
-const Quiz = require('../models/questionnaire.server.model')
+const Quiz = require('../models/quizes.server.model')
 
 
 const create = (req, res) => {
@@ -10,10 +10,10 @@ const create = (req, res) => {
             questionAnswers: [{
                 answerTitle: 'Answer 1',
                 answerScore: 1
+            },{
+                answerTitle: 'Answer 2',
+                answerScore: 2
             }]
-        }],
-        quizCategories: [{
-            categoryTitle: 'Sports'
         }]
     })
 
